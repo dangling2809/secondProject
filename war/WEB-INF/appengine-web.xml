@@ -14,7 +14,7 @@
   </system-properties>
 
 	<static-files>
-  <include path="/catalogs/**.pdf" />
+  <include path="/Slider/catalogs/**.pdf" />
   <include path="/**.html" />
    <include path="/**.css" />
     <include path="/**.js" />
