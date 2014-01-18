@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Royale: A responsive HTML5 website template by HTML5Templates.com
+	Released for free under the Creative Commons Attribution 3.0 license (html5templates.com/license)
+	Visit http://html5templates.com for more great templates or follow us on Twitter @HTML5T
+-->
+<html>
+<head>
+<title>TTMachines</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<noscript>
+	<link rel="stylesheet" href="css/5grid/core.css" />
+	<link rel="stylesheet" href="css/5grid/core-desktop.css" />
+	<link rel="stylesheet" href="css/5grid/core-1200px.css" />
+	<link rel="stylesheet" href="css/5grid/core-noscript.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style-desktop.css" />
+</noscript>
+<script src="css/5grid/jquery.js"></script>
+<script
+	src="css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+    var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    var map;
+    var yourLatlng ;
+    var myLatlng = new google.maps.LatLng(18.557,73.809);
+    var pune=new google.maps.LatLng(18.557,73.809);
+    function initialize() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var mapOptions = {
+            zoom: 14,
+            center: myLatlng
+        }
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title:"My Marriage Hall"
+        });
+        directionsDisplay.setMap(map);
+    }
+
+    function calcRoute() {
+        var selectedMode = document.getElementById("mode").value;
+        geocoder = new google.maps.Geocoder();
+        var address = document.getElementById("source-address").value;
+        geocoder.geocode( { 'address': address }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                yourLatlng = new google.maps.LatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+                var request = {
+                    origin: yourLatlng,
+                    destination: myLatlng,
+                    // Note that Javascript allows us to access the constant
+                    // using square brackets and a string value as its
+                    // "property."
+                    travelMode: google.maps.TravelMode[selectedMode]
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            } 
+            else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+        
+      
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+<script>
+
+$(function(){
+	  $("#headerId").load("header.html"); 
+	  $("#footerId").load("footer.html"); 
+	
+	});
+</script>
+</head><body>
+<div id="header-wrapper">
+	<header id="header" class="5grid-layout">
+		<div class="row">
+			<div class="12u"> 
+				<!-- Logo -->
+				<div id="headerId"></div>
+				<!-- Nav -->
+				<div id="navigationId"></div>
+					<nav class="mobileUI-site-nav">
+						<a href="index.html" >Homepage</a> 
+						<a href="gallery.html">Products</a>
+						<!-- 		 <a href="twocolumn1.html">Two Column #1</a>  -->
+						<!-- 		 <a href="twocolumn2.html">Two Column #2</a> -->
+						<a href="location.html" class="active">Contact Us</a>
+					</nav>
+			</div>
+		</div>
+	</header>
+</div>
+	<div id="wrapper">
+		<div class="5grid-layout">
+			<div id="page">
+				<div class="row">
+					<div class="12u">
+						<div class="row">
+							<div class="4u">
+								<section id="sidebar">	
+									<h2>Contact Us</h2>
+									<p class="subtitle">TT Machines Pvt. Ltd.</p>
+									<p>Survey No. 624/8, Plot No. 1751,<br>
+									   Chankan-Alandi Road, Near Alandi Phata,<br>
+									   Kuruli, Tal. Khed, Dist. Pune -4110501. (India)<br>
+									   Telefax: +91 2135-660122,<br>
+									   Mobile:  9922568700
+									   E-mail:  ttmachines@gmail.com
+									   </p>
+									</ul>
+								</section>
+							</div>
+							<div class="8u mobileUI-main-content">
+								<section id="content">
+									
+										<div id="map-canvas" style="width: 500px; height: 300px;"></div>
+										<br> <label>Enter Start Position Here: </label> <input
+											type='text' id="source-address" class="margin" /> <input
+											class="margin" type='button' value="Get Route"
+											onclick="calcRoute()" /> <br>
+										<div>
+											<label>Mode of Travel: </label> <select id="mode"
+												onchange="calcRoute();" class="margin1">
+												<option value="DRIVING">Driving</option>
+												<option value="WALKING">Walking</option>
+												<option value="BICYCLING">Bicycling</option>
+												<option value="TRANSIT">Transit</option>
+											</select>
+										</div>
+									
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footerId"></div>
+</body>
+</html>

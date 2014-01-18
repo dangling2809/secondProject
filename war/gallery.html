@@ -18,33 +18,43 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/style-desktop.css" />
 </noscript>
+
+<script src="Slider/lightbox/js/jquery-1.10.2.min.js"></script>
+<script src="Slider/lightbox/js/lightbox-2.6.min.js"></script>
 <script src="css/5grid/jquery.js"></script>
+<link href="Slider/lightbox/css/lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="Slider/css/style1.css" />
 <script src="Slider/js/modernizr.custom.63321.js"></script>
-<script src="Slider/js/mouseover_popup.js" language="JavaScript"
-	type="text/javascript"></script>
+
 
 <script
 	src="css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
 <!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
 <script>
-	$(function() {
-		$("#headerId").load("header.html");
-		$("#footerId").load("footer.html");
-		showDescription("1");
-	});
-	
-	function showDescription(divid)
-	{
+	/* function showDescription(divid) 
+	{	
+		console.log("div"+divid);
+		$("#links imageDescription"+divid+" div").show();
+		$("#links div").not("#imageDescription"+divid).hide();
 		
-	hideDesc();	
-	$("#imageDescription"+divid).show();
-	}
-	 function hideDesc(){
-		for(var i=1 ; i<=3 ; i++){
-	$("#imageDescription"+i).hide();
+	} */
+
+	$(function() {
+		showDescription("1");
+
+	       
+	      });
+	
+	function showDescription(divid) {
+		hideDesc();
+		$("#imageDescription" + divid).show();
 	}
 
+	function hideDesc() {
+		for ( var i = 1; i <= 11; i++) {
+			$("#imageDescription" + i).hide();
+		}
+	}
 </script>
 </head>
 <body>
@@ -54,12 +64,15 @@
 			<div class="row">
 				<div class="12u">
 					<!-- Logo -->
-					<div id="headerId"></div>
+					<h1>
+						<a href="#" class="mobileUI-site-name">TT Machines</a>
+					</h1>
+					<p>Where Speed & growth is way of life</p>
 					<!-- Nav -->
 					<div id="navigationId"></div>
 					<nav class="mobileUI-site-nav">
-						<a href="index.html" >Homepage</a> 
-						<a href="gallery.html" class="active">Gallery</a>
+						<a href="index.html">Homepage</a> <a href="gallery.html"
+							class="active">Products</a>
 						<!-- 		 <a href="twocolumn1.html">Two Column #1</a>  -->
 						<!-- 		 <a href="twocolumn2.html">Two Column #2</a> -->
 						<a href="location.html">Contact Us</a>
@@ -69,7 +82,7 @@
 		</header>
 	</div>
 	<div
-		style="display: none; position: absolute; z-index: 50; left: 100; top: 30; width: 15; height: 15"
+		style="display: none; position: absolute; z-index: 50; left: 100; top: 30; width: 15 !important; height: 15 !important"
 		id="preview_div"></div>
 	<div id="wrapper">
 		<div class="5grid-layout">
@@ -81,118 +94,116 @@
 							<div class="main">
 								<div id="mi-slider" class="mi-slider">
 									<ul class="enlarge">
-										<li><a href="#"><img src="Slider/images/001.png" alt="img01"
-												onmouseover="showtrail('Slider/images/001.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/001.png"
+											data-lightbox="roadtrip" title="Product name"><img src="Slider/images/001.png"
+												alt="img01" /></a>
 											<h4>Boots</h4></li>
-										<li><a href="#"><img src="Slider/images/001-1.png"
-												alt="img001_1"
-												onmouseover="showtrail('Slider/images/001-1.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
-											<h4>Boots</h4></li>
-
-									</ul>
-									<ul>
-										<li><a href="#"><img src="Slider/images/002.png" alt="img01"
-												onmouseover="showtrail('Slider/images/002.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
-											<h4>Boots</h4></li>
-										<li><a href="#"><img src="Slider/images/002-1.png"
-												alt="img01"
-												onmouseover="showtrail('Slider/images/002-1.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/001-1.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/001-1.png" alt="img001_1"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
 									<ul>
-										<li><a href="#"><img src="Slider/images/003.png" alt="img01"
-												onmouseover="showtrail('Slider/images/003.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/002.png"
+											data-lightbox="roadtrip"><img src="Slider/images/002.png"
+												alt="img01"></a>
+											<h4>Boots</h4></li>
+										<li><a href="Slider/images/002-1.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/002-1.png" alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
 									<ul>
-										<li><a href="#"><img src="Slider/images/004.png" alt="img01"
-												onmouseover="showtrail('Slider/images/004.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/003.png"
+											data-lightbox="roadtrip"><img src="Slider/images/003.png"
+												alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
 									<ul>
-										<li><a href="#"><img src="Slider/images/005.png" alt="img01"
-												onmouseover="showtrail('Slider/images/005.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/004.png"
+											data-lightbox="roadtrip"><img src="Slider/images/004.png"
+												alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
 									<ul>
-										<li><a href="#"><img src="Slider/images/006.png" alt="img01"
-												onmouseover="showtrail('Slider/images/006.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/005.png"
+											data-lightbox="roadtrip"><img src="Slider/images/005.png"
+												alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
 									<ul>
-										<li><a href="#"><img src="Slider/images/007.png" alt="img01"
-												onmouseover="showtrail('Slider/images/007.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
-											<h4>Boots</h4></li>
-											<li><a href="#"><img src="Slider/images/007-1.png" alt="img01"
-												onmouseover="showtrail('Slider/images/007-1.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/006.png"
+											data-lightbox="roadtrip"><img src="Slider/images/006.png"
+												alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
-											<ul>
-										<li><a href="#"><img src="Slider/images/008.png" alt="img01"
-												onmouseover="showtrail('Slider/images/008.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+									<ul>
+										<li><a href="Slider/images/007.png"
+											data-lightbox="roadtrip"><img src="Slider/images/007.png"
+												alt="img01"></a>
 											<h4>Boots</h4></li>
-											
-
-									</ul>
-											<ul>
-										<li><a href="#"><img src="Slider/images/009.png" alt="img01"
-												onmouseover="showtrail('Slider/images/009.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
-											<h4>Boots</h4></li>
-										
-
-									</ul>
-											<ul>
-										<li><a href="#"><img src="Slider/images/0010.png" alt="img01"
-												onmouseover="showtrail('Slider/images/0010.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
-											<h4>Boots</h4></li>
-											<li><a href="#"><img src="Slider/images/0010-1.png" alt="img01"
-												onmouseover="showtrail('Slider/images/0010-1.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+										<li><a href="Slider/images/007-1.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/007-1.png" alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
-											<ul>
-										<li><a href="#"><img src="Slider/images/0011.png" alt="img01"
-												onmouseover="showtrail('Slider/images/0011.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+									<ul>
+										<li><a href="Slider/images/008.png"
+											data-lightbox="roadtrip"><img src="Slider/images/008.png"
+												alt="img01"></a>
 											<h4>Boots</h4></li>
-											<li><a href="#"><img src="Slider/images/0011-1.png" alt="img01"
-												onmouseover="showtrail('Slider/images/0011-1.png','Title of the Picture Goes Here',310,440)"
-												onmouseout="hidetrail()"></a>
+
+
+									</ul>
+									<ul>
+										<li><a href="Slider/images/009.png"
+											data-lightbox="roadtrip"><img src="Slider/images/009.png"
+												alt="img01"></a>
+											<h4>Boots</h4></li>
+
+
+									</ul>
+									<ul>
+										<li><a href="Slider/images/0010.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/0010.png" alt="img01"></a>
+											<h4>Boots</h4></li>
+										<li><a href="Slider/images/0010-1.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/0010-1.png" alt="img01"></a>
+											<h4>Boots</h4></li>
+
+									</ul>
+									<ul>
+										<li><a href="Slider/images/0011.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/0011.png" alt="img01"></a>
+											<h4>Boots</h4></li>
+										<li><a href="Slider/images/0011-1.png"
+											data-lightbox="roadtrip"><img
+												src="Slider/images/0011-1.png" alt="img01"></a>
 											<h4>Boots</h4></li>
 
 									</ul>
 									<nav>
-										<a href="#">Product 1</a> 
-										<a href="#">Product 2</a> 
-										<a href="#">Product 3</a> 
-										<a href="#">Product 4</a>
-										<a href="#">Product 5</a> 
-										<a href="#">Product 6</a> 
-										<a href="#">Product 7</a> 
-										<a href="#">Product 8</a> 
-										<a href="#">Product 9</a> 
-										<a href="#">Product 10</a> 
-										<a href="#">Product 11</a>
+										<a href="#" onclick="showDescription('1')">Product 1</a> <a
+											href="#" onclick="showDescription('2')">Product 2</a> <a
+											href="#" onclick="showDescription('3')">Product 3</a> <a
+											href="#" onclick="showDescription('4')">Product 4</a> <a
+											href="#" onclick="showDescription('5')">Product 5</a> <a
+											href="#" onclick="showDescription('6')">Product 6</a> <a
+											href="#" onclick="showDescription('7')">Product 7</a> <a
+											href="#" onclick="showDescription('8')">Product 8</a> <a
+											href="#" onclick="showDescription('9')">Product 9</a> <a
+											href="#" onclick="showDescription('10')">Product 10</a> <a
+											href="#" onclick="showDescription('11')">Product 11</a>
 									</nav>
 								</div>
 							</div>
@@ -205,31 +216,53 @@
 				src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 			<script src="Slider/js/jquery.catslider.js"></script>
 			<script>
-		$(function() {
+				$(function() {
 
-			$('#mi-slider').catslider();
+					$('#mi-slider').catslider();
 
-		});
-	</script>
+				});
+			</script>
 			<div id="feature-content">
 				<section>
-					<h2>Description</h2>
+					<h2>Product Description</h2>
 				</section>
 				<div class="row">
 					<div class="12u">
-						<div class="row">
-							<div id="imageDescription1">Div 1 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription2">Div 2  <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription3">Div 3  <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription4">Div 4  <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription5">Div 5 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription6">Div 6 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription7">Div 7 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription8">Div 8 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription9">Div 9 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription10">Div 10 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							<div id="imageDescription11">Div 11 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a></div>
-							
+						<div id="links" class="row">
+							<div id="imageDescription1">
+								Div 1 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription2">
+								Div 2 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription3">
+								Div 3 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription4">
+								Div 4 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription5">
+								Div 5 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription6">
+								Div 6 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription7">
+								Div 7 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription8">
+								Div 8 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription9">
+								Div 9 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription10">
+								Div 10 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+							<div id="imageDescription11">
+								Div 11 <a href="Slider/catalogs/TTCatalogue.pdf" download>Download</a>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -238,6 +271,15 @@
 
 		</div>
 	</div>
-	<div id="footerId"></div>
+	<div class="5grid-layout">
+		<div id="copyright">
+			<section>
+				<p>
+					&copy; Copyrights 2014 TT machines Pvt Ltd <a
+						href="http://html5templates.com/">HTML5Templates.com</a>
+				</p>
+			</section>
+		</div>
+	</div>
 </body>
 </html>
